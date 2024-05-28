@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>П'ять подій з мишкою</title>
+</head>
+<body>
+    <h1>П'ять подій з мишкою</h1>
+    <p id="p1" onclick="changeP1()">Клацніть на мене мишкою</p>
+    <p id="p2" onmousedown="p2Down()" onmouseup="p2Up()">На цьому тексті натисніть, потримайте і відпустіть ліву кнопку мишки</p>
+    <p id="p3" onmouseover="p3Over()" onmouseout="p3Out()">Повільно проведіть курсором мишки по цій написи</p>
+
+    <script>
+        function changeP1() {
+            var p1 = document.getElementById("p1");
+            if (p1.style.fontSize == "48pt") {
+                p1.style.fontSize = "16pt";
+                p1.style.color = "black";
+                p1.style.backgroundColor = "transparent";
+            } else {
+                p1.style.fontSize = "48pt";
+                p1.style.color = "white";
+                p1.style.backgroundColor = "blue";
+            }
+        }
+
+        function p2Down() {
+            document.getElementById("p2").style.backgroundColor = "green";
+        }
+
+        function p2Up() {
+            document.getElementById("p2").style.backgroundColor = "yellow";
+        }
+
+        function p3Over() {
+            document.getElementById("p3").style.backgroundColor = "red";
+        }
+
+        function p3Out() {
+            document.getElementById("p3").style.backgroundColor = "lightblue";
+        }
+    </script>
+</body>
+</html>

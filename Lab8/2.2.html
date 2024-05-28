@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Картинка і підпис</title>
+</head>
+<body onmousedown="handleEvent(event)">
+    <img id="myImage" src="image1.jpg">
+    <p id="myCaption">Підпис</p>
+
+    <script>
+        function handleEvent(e) {
+            e = e || window.event;
+            var elem = e.target || e.srcElement;
+
+            if (elem.id == "myCaption") {
+                elem.style.color = (elem.style.color == "red") ? "black" : "red";
+                e.stopPropagation();
+            }
+
+            if (elem.id == "myImage") {
+                elem.src = (elem.src.includes("image1.jpg")) ? "image2.jpg" : "image1.jpg";
+                document.getElementById("myCaption").innerHTML = (elem.src.includes("image1.jpg")) ? "Підпис 1" : "Підпис 2";
+                e.stopPropagation();
+            }
+        }
+    </script>
+</body>
+</html>
